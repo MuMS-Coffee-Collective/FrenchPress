@@ -1,2 +1,2 @@
-FrenchPress
+French Press Study
 ===========
