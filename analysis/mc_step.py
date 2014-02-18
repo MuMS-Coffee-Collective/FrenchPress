@@ -25,6 +25,7 @@ def take_step(current_params):
     print "New parameters are: {0}".format(new_vals)
     return new_vals
 
+
 # pull data from google spreadsheet
 response = requests.get('https://docs.google.com/spreadsheet/ccc?key=0Ar4H2kiPmGtNdFBWa2FlalVONHpKaTlMekFvTThkeEE&output=csv')
 assert response.status_code == 200, 'Wrong status code'
@@ -54,6 +55,7 @@ current_mean = mean_ratings[-1]
 current_stdev = stdev_ratings[-1]
 last_mean = mean_ratings[-2]
 
+# accept/reject
 if current_mean > last_mean:
     print "Ratings improved since last step.\n"
     new_vals = take_step(current_params)
@@ -65,4 +67,4 @@ else:
         new_vals = take_step(current_params)
     else:
         print "Rejecting new parameters.\n"
-        print "Last parameters were: {0}".format(new_vals)
+        print "Last parameters were: {0}".format(current_params)
