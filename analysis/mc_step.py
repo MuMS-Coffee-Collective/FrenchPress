@@ -22,7 +22,7 @@ def take_step(current_params):
         max_val = vals[1]
         new_vals[i] = int(current + (2 * random.random() * max_val - max_val))
 
-    print "New parameters are: {0}".format(new_vals)
+    print "Parameters for today are: {0}".format(new_vals)
     return new_vals
 
 
@@ -78,11 +78,11 @@ if current_mean > last_mean:
     print "\nRatings improved since last step.\n"
     new_vals = take_step(current_params)
 else:
-    print "Ratings declined since last step.\n"
+    print "\nRatings declined since last step.\n"
     print "Sampling from normal...\n"
     sample = np.random.normal(current_mean, current_stdev)
     if sample > last_mean:
         new_vals = take_step(current_params)
     else:
         print "Rejecting new parameters.\n"
-        print "Last parameters were: {0}".format(current_params)
+        print "Parameters for today are: {0}".format(current_params)
