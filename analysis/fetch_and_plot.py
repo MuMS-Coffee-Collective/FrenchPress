@@ -23,7 +23,6 @@ for row in csv_data:
             row[i] = np.nan
     list_data.append(row)
 np_data = np.array(list_data)
-np_data = np_data[:6, :]  # TODO: automate cutoff finding
 
 # raw data from columns
 date = np.array(np_data[2:, 0], dtype='str')
