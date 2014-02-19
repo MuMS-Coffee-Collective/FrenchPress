@@ -61,17 +61,17 @@ current_stdev = stdev_ratings[-1]
 print u"          Weight (g) Temp (\N{DEGREE SIGN}F) Time (s) | Rating"
 print "--------------------------------------------------------------"
 print u"Last: {0:10.0f} {1:9.0f} {2:8.0f}     | {3:4.3f}\u00B1{4:4.3f}".format(
-        last_params[0],
-        last_params[1],
-        last_params[2],
-        last_mean,
-        last_stdev)
+        float(last_params[0]),
+        float(last_params[1]),
+        float(last_params[2]),
+        float(last_mean),
+        float(last_stdev))
 print u"Current: {0:7.0f} {1:9.0f} {2:8.0f}     | {3:4.3f}\u00B1{4:4.3f}".format(
-        current_params[0],
-        current_params[1],
-        current_params[2],
-        current_mean,
-        current_stdev)
+        float(current_params[0]),
+        float(current_params[1]),
+        float(current_params[2]),
+        float(current_mean),
+        float(current_stdev))
 
 # accept/reject
 if current_mean > last_mean:
